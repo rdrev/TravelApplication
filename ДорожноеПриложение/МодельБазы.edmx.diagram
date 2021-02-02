@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f788b20605d34bc8ad66eacf4c45cbba" Name="Diagram1">
+        <EntityTypeShape EntityType="ДорожнаяБазаModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ДорожнаяБазаModel.Бригады" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ДорожнаяБазаModel.Задачи" Width="1.5" PointX="3" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ДорожнаяБазаModel.Категории" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ДорожнаяБазаModel.СкладМатериала" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ДорожнаяБазаModel.Сотрудники" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="ДорожнаяБазаModel.СписокРасходов" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
+        <AssociationConnector Association="ДорожнаяБазаModel.FK_Задачи_Бригады" ManuallyRouted="false" />
+        <AssociationConnector Association="ДорожнаяБазаModel.FK_Сотрудники_Бригады" ManuallyRouted="false" />
+        <AssociationConnector Association="ДорожнаяБазаModel.FK_Задачи_Категории" ManuallyRouted="false" />
+        <AssociationConnector Association="ДорожнаяБазаModel.FK_СписокРасходов_Задачи" ManuallyRouted="false" />
+        <AssociationConnector Association="ДорожнаяБазаModel.FK_СписокРасходов_СкладМатериала" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

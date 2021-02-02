@@ -24,15 +24,30 @@
 
             <TextBlock Text="Логин" Grid.Row="1"
                        HorizontalAlignment="Right"
-                       VerticalAlignment="Center"/>
+                       VerticalAlignment="Center"
+                       Margin="5"/>
             <TextBlock Text="Пароль" Grid.Row="2"
                        HorizontalAlignment="Right"
-                       VerticalAlignment="Center"/>
+                       VerticalAlignment="Center"
+                       Margin="5"/>
 
             <TextBox x:Name="login" Grid.Row="1"
-                     Grid.Column="2" Height="30"/>
+                     Grid.Column="2" Height="30"
+                     Margin="5"/>
             <PasswordBox x:Name="password" Grid.Row="2"
-                         Grid.Column="2" Height="30"/>
+                         Grid.Column="2" Height="30"
+                       Margin="5"/>
+
+            <Button Content="Вход" x:Name="VxodBtn"
+                    Click="VxodBtn_Click"
+                    Grid.Row="3"
+                    Width="100"
+                    Height="30"
+                    HorizontalAlignment="Right"/>
+
+            <TextBlock Text="Подождите" x:Name="InfV"
+                       Grid.Column="1" Grid.Row="3" FontSize="24"
+                       Visibility="Hidden"/>
 
         </Grid>
     </Grid>

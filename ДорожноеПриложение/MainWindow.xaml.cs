@@ -24,6 +24,7 @@ namespace ДорожноеПриложение
         {
             InitializeComponent();
             MainFrame.Navigate(new AuthorizPage());
+            MenegerFrame.Frame = MainFrame;
         }
     }
 }

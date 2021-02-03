@@ -55,8 +55,6 @@
                         <DataGridTextColumn 
                             Header="Статус" Binding="{Binding Статус}"/>
                         <DataGridTextColumn 
-                            Header="Отчет" Binding="{Binding Отчет}"/>
-                        <DataGridTextColumn 
                             Header="Категория" Binding="{Binding Категории.КатегорияНаз}"/>
                         <DataGridTextColumn 
                             Header="Дата" Binding="{Binding Дата}"/>

@@ -36,7 +36,8 @@ namespace ДорожноеПриложение
         //Редактор отчета
         private void BtnPer_Click(object sender, RoutedEventArgs e)
         {
-
+            var report = new ReportEditorWindow((sender as Button).DataContext as Задачи);
+            report.Show();
         }
        
         //Добавать задачу

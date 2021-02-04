@@ -52,7 +52,7 @@ namespace ДорожноеПриложение
                     ДорожнаяБазаEntities.GetДорожнаяБазаEntities().SaveChanges();
                 }
             }
-            catch (Exception ex)
+            catch (Exception ex)     
             {
                 MessageBox.Show(ex.Message);
             }

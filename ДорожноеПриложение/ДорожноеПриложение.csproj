@@ -67,8 +67,14 @@
     <Compile Include="AddEmpPage.xaml.cs">
       <DependentUpon>AddEmpPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddMaterialPage.xaml.cs">
+      <DependentUpon>AddMaterialPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddTaskPage.xaml.cs">
       <DependentUpon>AddTaskPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ReportEditorWindow.xaml.cs">
       <DependentUpon>ReportEditorWindow.xaml</DependentUpon>
@@ -113,6 +119,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AddMaterialPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AddTaskPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -135,9 +145,6 @@
     </Compile>
     <Compile Include="AuthorizPage.xaml.cs">
       <DependentUpon>AuthorizPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

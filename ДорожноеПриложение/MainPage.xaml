@@ -32,12 +32,14 @@
                                   Name="CBB1"
                                   SelectionChanged="CBB1_SelectionChanged"
                                   DisplayMemberPath="Название"
-                                  Grid.Column="1"/>
+                                  Grid.Column="1"
+                                  Margin="2"/>
                         <Button x:Name="AddTask"
                                 Click="AddTask_Click"
                                 Content="Добавить Задачу"
                                 HorizontalAlignment="Right"
-                                Grid.Column="2"/>
+                                Grid.Column="2"
+                                Margin="2"/>
                     </Grid>
                 </WrapPanel>
                 <DataGrid x:Name="DGT"
@@ -70,7 +72,7 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-                        
+
                         <DataGridTemplateColumn>
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
@@ -98,7 +100,7 @@
                 </DataGrid>
             </Grid>
         </TabItem>
-        
+
         <TabItem Header="Сотрудники">
             <Grid>
                 <Grid.RowDefinitions>
@@ -128,7 +130,8 @@
                             SelectionChanged="CBB2_SelectionChanged"
                             DisplayMemberPath="Название"
                             Grid.Column="1" 
-                            Grid.Row="0"/>
+                            Grid.Row="0"
+                            Margin="2"/>
                         <TextBlock 
                             Text="Имя" 
                             Width="175"
@@ -140,7 +143,8 @@
                             Name="TBN"
                             TextChanged="TBN_TextChanged"
                             Grid.Column="1"
-                            Grid.Row="1"/>
+                            Grid.Row="1"
+                            Margin="2"/>
                         <Button 
                             x:Name="AddEmp" 
                             Click="AddEmp_Click"
@@ -148,14 +152,16 @@
                             HorizontalAlignment="Right" 
                             Grid.Column="2" 
                             Grid.Row="0" 
-                            Width="124"/>
+                            Width="124"
+                            Margin="2"/>
                         <Button
                             x:Name="AddBri" Click="AddBri_Click"
                             Content="Добавить бригаду" 
                             HorizontalAlignment="Right"
                             Grid.Column="2" 
                             Grid.Row="1" 
-                            Width="124"/>
+                            Width="124"
+                            Margin="2"/>
                     </Grid>
                 </WrapPanel>
                 <ListView 
@@ -186,7 +192,7 @@
                                     <ColumnDefinition Width="100"/>
                                     <ColumnDefinition Width="100"/>
                                 </Grid.ColumnDefinitions>
-                                
+
                                 <Image Grid.RowSpan="4">
                                     <Image.Source>
                                         <Binding Path="Фото"/>
@@ -202,12 +208,14 @@
                                         x:Name="UpdEmp"
                                         Click="UpdEmp_Click"
                                         Content="Редоктировать"
-                                        Grid.Column="0"/>
+                                        Grid.Column="0"
+                                        Margin="2"/>
                                     <Button
                                         x:Name="DelEmp"
                                         Click="DelEmp_Click"
                                         Content="Уволить" 
-                                        Grid.Column="1"/>
+                                        Grid.Column="1"
+                                        Margin="2"/>
                                 </Grid>
                                 <TextBlock
                                     Text="Имя" Grid.Column="1" Grid.Row="0"/>
@@ -260,12 +268,14 @@
                             Name="TBM"
                             TextChanged="TBM_TextChanged"
                             Grid.Column="1"
-                            Grid.Row="1"/>
+                            Grid.Row="1"
+                            Margin="2"/>
                         <Button x:Name="AddMaterial"
                                 Click="AddMaterial_Click"
                                 Content="Добавить Матириал"
                                 HorizontalAlignment="Right"
-                                Grid.Column="2"/>
+                                Grid.Column="2"
+                                Margin="2"/>
                     </Grid>
                 </WrapPanel>
                 <DataGrid x:Name="DGW"

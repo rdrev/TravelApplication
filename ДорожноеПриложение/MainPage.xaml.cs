@@ -15,6 +15,9 @@ using System.Windows.Shapes;
 
 namespace ДорожноеПриложение
 {
+    /// <summary>
+    /// Логика взаимодействия для MainPage.xaml
+    /// </summary>
     public partial class MainPage : Page
     {
         public MainPage()
@@ -39,7 +42,7 @@ namespace ДорожноеПриложение
             var report = new ReportEditorWindow((sender as Button).DataContext as Задачи);
             report.Show();
         }
-       
+
         //Добавать задачу
         private void AddTask_Click(object sender, RoutedEventArgs e)
         {
@@ -68,7 +71,7 @@ namespace ДорожноеПриложение
         {
             updateTab1();
         }
-       
+
         //Страница сотрудников
         private void updateTab2()
         {
@@ -136,7 +139,7 @@ namespace ДорожноеПриложение
         //Добавить материал
         private void AddMaterial_Click(object sender, RoutedEventArgs e)
         {
-
+            MenegerFrame.Frame.Navigate(new AddMaterialPage());
         }
 
         //Обновить список при изменение
@@ -168,5 +171,5 @@ namespace ДорожноеПриложение
             }
         }
 
-    } 
+    }
 }

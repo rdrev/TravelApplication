@@ -76,6 +76,12 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MinWindow.xaml.cs">
+      <DependentUpon>MinWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PlisWindow.xaml.cs">
+      <DependentUpon>PlisWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ReportEditorWindow.xaml.cs">
       <DependentUpon>ReportEditorWindow.xaml</DependentUpon>
     </Compile>
@@ -150,6 +156,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MinWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PlisWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ReportEditorWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

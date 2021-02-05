@@ -288,6 +288,26 @@
                                 Header="Кол-во" Binding="{Binding Количиство}"/>
                         <DataGridTextColumn
                                 Header="ЕИ" Binding="{Binding ЕденицаИзмерения}"/>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button x:Name="PlisBtn"
+                                            Content="+"
+                                            Click="PlisBtn_Click"
+                                            Margin="2"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button x:Name="MinBtn"
+                                            Content="-"
+                                            Click="MinBtn_Click"
+                                            Margin="2"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>

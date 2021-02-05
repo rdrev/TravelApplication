@@ -26,7 +26,7 @@ namespace ДорожноеПриложение
         }
 
         //Страница задачь
-        private void updateTab1()
+        public void updateTab1()
         {
             var comboList = ДорожнаяБазаEntities.GetДорожнаяБазаEntities().Задачи.ToList();
 
@@ -73,7 +73,7 @@ namespace ДорожноеПриложение
         }
 
         //Страница сотрудников
-        private void updateTab2()
+        public void updateTab2()
         {
             var comboList = ДорожнаяБазаEntities.GetДорожнаяБазаEntities().Сотрудники.ToList();
 
@@ -127,7 +127,7 @@ namespace ДорожноеПриложение
         }
 
         //Страница склада
-        private void updateTab3()
+        public void updateTab3()
         {
             var comboList = ДорожнаяБазаEntities.GetДорожнаяБазаEntities().СкладМатериала.ToList();
 
@@ -153,23 +153,39 @@ namespace ДорожноеПриложение
         {
             if (Visibility == Visibility.Visible)
             {
-                updateTab1();
-                updateTab2();
-                updateTab3();
-
-                var comboList = ДорожнаяБазаEntities.GetДорожнаяБазаEntities().Бригады.ToList();
-
-                comboList.Insert(0, new Бригады
-                {
-                    Название = "Все"
-                });
-                CBB1.ItemsSource = comboList;
-                CBB2.ItemsSource = comboList;
-
-                CBB1.SelectedIndex = 0;
-                CBB2.SelectedIndex = 0;
+                Updata();
             }
         }
 
+        private void PlisBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new PlisWindow((sender as Button).DataContext as СкладМатериала, this);
+            win.Show();
+        }
+
+        private void MinBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new MInWindow((sender as Button).DataContext as СкладМатериала, this);
+            win.Show();
+        }
+
+        public void Updata()
+        {
+            updateTab1();
+            updateTab2();
+            updateTab3();
+
+            var comboList = ДорожнаяБазаEntities.GetДорожнаяБазаEntities().Бригады.ToList();
+
+            comboList.Insert(0, new Бригады
+            {
+                Название = "Все"
+            });
+            CBB1.ItemsSource = comboList;
+            CBB2.ItemsSource = comboList;
+
+            CBB1.SelectedIndex = 0;
+            CBB2.SelectedIndex = 0;
+        }
     }
 }

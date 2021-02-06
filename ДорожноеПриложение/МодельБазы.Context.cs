@@ -17,19 +17,17 @@ namespace ДорожноеПриложение
     {
         private static ДорожнаяБазаEntities DBE = null;
 
-        public static ДорожнаяБазаEntities GetДорожнаяБазаEntities()
-        {
-            if (DBE == null)
-                DBE = new ДорожнаяБазаEntities();
-
-            return DBE;
-        }
-
         public ДорожнаяБазаEntities()
             : base("name=ДорожнаяБазаEntities")
         {
         }
     
+        public static ДорожнаяБазаEntities GetДорожнаяБазаEntities() 
+        {
+            if (DBE == null)
+                DBE = new ДорожнаяБазаEntities();
+            return DBE;
+        }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

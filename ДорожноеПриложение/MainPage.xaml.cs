@@ -25,6 +25,8 @@ namespace ДорожноеПриложение
             InitializeComponent();
         }
 
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
         //Страница задачь
         public void updateTab1()
         {
@@ -41,6 +43,12 @@ namespace ДорожноеПриложение
         {
             var report = new ReportEditorWindow((sender as Button).DataContext as Задачи);
             report.Show();
+        }
+        
+        //Упровлять росходами
+        private void MatBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MenegerFrame.Frame.Navigate(new MatConPage((sender as Button).DataContext as Задачи));
         }
 
         //Добавать задачу
@@ -72,6 +80,7 @@ namespace ДорожноеПриложение
             updateTab1();
         }
 
+        //////////////////////////////////////////////////////////////////////////////////////////////////////
         //Страница сотрудников
         public void updateTab2()
         {
@@ -126,6 +135,7 @@ namespace ДорожноеПриложение
             }
         }
 
+        //////////////////////////////////////////////////////////////////////////////////////////////////////
         //Страница склада
         public void updateTab3()
         {
@@ -180,11 +190,6 @@ namespace ДорожноеПриложение
                 ДорожнаяБазаEntities.GetДорожнаяБазаEntities().SaveChanges();
                 updateTab3();
             }
-        }
-
-        private void MatBtn_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         //Обновление всех даных

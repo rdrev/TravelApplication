@@ -67,6 +67,9 @@
     <Compile Include="AddEmpPage.xaml.cs">
       <DependentUpon>AddEmpPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddMatConPage.xaml.cs">
+      <DependentUpon>AddMatConPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddMaterialPage.xaml.cs">
       <DependentUpon>AddMaterialPage.xaml</DependentUpon>
     </Compile>
@@ -75,6 +78,9 @@
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MatConPage.xaml.cs">
+      <DependentUpon>MatConPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MinWindow.xaml.cs">
       <DependentUpon>MinWindow.xaml</DependentUpon>
@@ -125,6 +131,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AddMatConPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AddMaterialPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -156,6 +166,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MatConPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MinWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -205,19 +219,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="МодельБазы.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>МодельБазы.Context.cs</LastGenOutput>
       <DependentUpon>МодельБазы.edmx</DependentUpon>
+      <LastGenOutput>МодельБазы.Context.cs</LastGenOutput>
     </Content>
     <Content Include="МодельБазы.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>МодельБазы.edmx</DependentUpon>
       <LastGenOutput>МодельБазы.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

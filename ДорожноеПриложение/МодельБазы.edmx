@@ -70,22 +70,15 @@
           <Property Name="Логин" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Пароль" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6002: В таблице или представлении "ДорожнаяБаза.dbo.СписокРасходов" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
         <EntityType Name="СписокРасходов">
           <Key>
             <PropertyRef Name="КодСпискаРасхода" />
-            <PropertyRef Name="Задача" />
-            <PropertyRef Name="Матириал" />
-            <PropertyRef Name="КолисчествоРасхода" />
           </Key>
           <Property Name="КодСпискаРасхода" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Задача" Type="int" Nullable="false" />
           <Property Name="Матириал" Type="int" Nullable="false" />
           <Property Name="КолисчествоРасхода" Type="float" Nullable="false" />
         </EntityType>
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6002: В таблице или представлении "ДорожнаяБаза.dbo.СписокРасходов$" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
         <Association Name="FK_Задачи_Бригады">
           <End Role="Бригады" Type="Self.Бригады" Multiplicity="1" />
           <End Role="Задачи" Type="Self.Задачи" Multiplicity="*" />
@@ -153,14 +146,7 @@
           <EntitySet Name="Категории" EntityType="Self.Категории" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="СкладМатериала" EntityType="Self.СкладМатериала" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Сотрудники" EntityType="Self.Сотрудники" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="СписокРасходов" EntityType="Self.СписокРасходов" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [СписокРасходов].[КодСпискаРасхода] AS [КодСпискаРасхода], 
-    [СписокРасходов].[Задача] AS [Задача], 
-    [СписокРасходов].[Матириал] AS [Матириал], 
-    [СписокРасходов].[КолисчествоРасхода] AS [КолисчествоРасхода]
-    FROM [dbo].[СписокРасходов] AS [СписокРасходов]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="СписокРасходов" EntityType="Self.СписокРасходов" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Задачи_Бригады" Association="Self.FK_Задачи_Бригады">
             <End Role="Бригады" EntitySet="Бригады" />
             <End Role="Задачи" EntitySet="Задачи" />
@@ -263,9 +249,6 @@
         <EntityType Name="СписокРасходов">
           <Key>
             <PropertyRef Name="КодСпискаРасхода" />
-            <PropertyRef Name="Задача" />
-            <PropertyRef Name="Матириал" />
-            <PropertyRef Name="КолисчествоРасхода" />
           </Key>
           <Property Name="КодСпискаРасхода" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Задача" Type="Int32" Nullable="false" />

@@ -1,0 +1,78 @@
+﻿<Page x:Class="ДорожноеПриложение.BrigadeEditorPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ДорожноеПриложение"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="BrigadeEditorPage"
+      IsVisibleChanged="Page_IsVisibleChanged" >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <WrapPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="175"/>
+                    <ColumnDefinition Width="255"/>
+                    <ColumnDefinition Width="175"/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="CleBtn"
+                        Content="Назад"
+                        Click="CleBtn_Click"/>
+                <TextBlock Text="Бригады"
+                                   Name="TB"
+                                   Width="175"
+                                   TextAlignment="Right"
+                                   Grid.Column="1"/>
+                <TextBox
+                            Width="225"
+                            Name="TBB"
+                            TextChanged="TBB_TextChanged"
+                            Grid.Column="2"
+                            Margin="2"/>
+                <Button x:Name="AddBrig"
+                                Click="AddBrig_Click"
+                                Content="Добавить Матириал"
+                                HorizontalAlignment="Right"
+                                Grid.Column="3"
+                                Margin="2"/>
+            </Grid>
+        </WrapPanel>
+        <DataGrid x:Name="DGB" Grid.Row="1"
+                      AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название" Binding="{Binding Название}"/>
+                <DataGridTextColumn Header="Название" Binding="{Binding Машина}"/>
+                <DataGridTextColumn Header="Название" Binding="{Binding Занетость}"/>
+                <DataGridTextColumn Header="Название" Binding="{Binding Описание}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="UpdBriBtn"
+                                            Content="Изменить"
+                                            Click="UpdBriBtn_Click"
+                                            Margin="2"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="DelBriBtn"
+                                            Content="Удалить"
+                                            Click="DelBriBtn_Click"
+                                            Margin="2"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

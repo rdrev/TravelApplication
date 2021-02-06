@@ -167,8 +167,8 @@
                             Width="124"
                             Margin="2"/>
                         <Button
-                            x:Name="AddBri" Click="AddBri_Click"
-                            Content="Добавить бригаду" 
+                            x:Name="BriBtn" Click="BriBtn_Click"
+                            Content="Работы с бригадами" 
                             HorizontalAlignment="Right"
                             Grid.Column="2" 
                             Grid.Row="1" 

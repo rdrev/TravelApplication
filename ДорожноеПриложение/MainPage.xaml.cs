@@ -112,10 +112,10 @@ namespace ДорожноеПриложение
             MenegerFrame.Frame.Navigate(new AddEmpPage(new Сотрудники()));
         }
 
-        //Добавить бригаду
-        private void AddBri_Click(object sender, RoutedEventArgs e)
+        //Редактор бригад 
+        private void BriBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            MenegerFrame.Frame.Navigate(new BrigadeEditorPage());
         }
 
         //Изменить сотрурдника
@@ -181,7 +181,7 @@ namespace ДорожноеПриложение
             win.Show();
         }
 
-        //удаление 
+        //удаление материала
         private void DelMatBtn_Click(object sender, RoutedEventArgs e)
         {
             if (MessageBox.Show("Вы дельствительно хотете удалить пазицию", "Подверждение", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)

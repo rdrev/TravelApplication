@@ -22,12 +22,13 @@ namespace ДорожноеПриложение
         {
         }
     
-        public static ДорожнаяБазаEntities GetДорожнаяБазаEntities() 
+        public static ДорожнаяБазаEntities GetДорожнаяБазаEntities()
         {
             if (DBE == null)
                 DBE = new ДорожнаяБазаEntities();
             return DBE;
         }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

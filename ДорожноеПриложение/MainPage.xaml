@@ -77,6 +77,18 @@
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
                                     <Button 
+                                        x:Name="MatBtn"
+                                        Content="Расход"
+                                        Width="auto"
+                                        Click="MatBtn_Click"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button 
                                         x:Name="UpdTask"
                                         Content="Редактировать"
                                         Width="auto"
@@ -304,6 +316,16 @@
                                     <Button x:Name="MinBtn"
                                             Content="-"
                                             Click="MinBtn_Click"
+                                            Margin="2"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button x:Name="DelMatBtn"
+                                            Content="Удалить"
+                                            Click="DelMatBtn_Click"
                                             Margin="2"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>

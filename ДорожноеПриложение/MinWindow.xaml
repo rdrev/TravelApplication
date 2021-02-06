@@ -10,7 +10,7 @@
         MaxWidth="200" MinWidth="200"
         ResizeMode="NoResize">
     <StackPanel>
-        <TextBlock x:Name="MaterialBox" Margin="0,20,0,5"/>
+        <TextBlock x:Name="MaterialBox" Margin="30,20,0,5"/>
         <TextBox x:Name="PlisBox" Margin="0,5"/>
         <Button x:Name="OkBtn" Content="OK" Click="OkBtn_Click"  Margin="80,5,0,0"/>
     </StackPanel>

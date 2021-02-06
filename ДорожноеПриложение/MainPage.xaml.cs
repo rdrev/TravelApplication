@@ -157,18 +157,37 @@ namespace ДорожноеПриложение
             }
         }
 
+        //Окно поставки материала
         private void PlisBtn_Click(object sender, RoutedEventArgs e)
         {
             var win = new PlisWindow((sender as Button).DataContext as СкладМатериала, this);
             win.Show();
         }
 
+        //Окно убали материала
         private void MinBtn_Click(object sender, RoutedEventArgs e)
         {
             var win = new MInWindow((sender as Button).DataContext as СкладМатериала, this);
             win.Show();
         }
 
+        //удаление 
+        private void DelMatBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Вы дельствительно хотете удалить пазицию", "Подверждение", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                ДорожнаяБазаEntities.GetДорожнаяБазаEntities().СкладМатериала.Remove((sender as Button).DataContext as СкладМатериала);
+                ДорожнаяБазаEntities.GetДорожнаяБазаEntities().SaveChanges();
+                updateTab3();
+            }
+        }
+
+        private void MatBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        //Обновление всех даных
         public void Updata()
         {
             updateTab1();

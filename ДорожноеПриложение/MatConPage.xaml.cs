@@ -22,11 +22,20 @@ namespace ДорожноеПриложение
     {
         private Задачи задача = null;
 
-        public MatConPage(Задачи задача)
+        public MatConPage(Задачи задача, Сотрудники сотрудник)
         {
             InitializeComponent();
 
             this.задача = задача;
+
+            if (сотрудник.Доступ == "1")
+            {
+                AddMaterial.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                AddMaterial.Visibility = Visibility.Hidden;
+            }
 
             updata();
         }

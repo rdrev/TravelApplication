@@ -37,7 +37,7 @@ namespace ДорожноеПриложение
                     var vxod = ДорожнаяБазаEntities.GetДорожнаяБазаEntities().Сотрудники.ToList().Find(p => p.Логин == login.Text && p.Пароль == Convert.ToString(password.Password));
 
                     if (vxod != null)
-                        MenegerFrame.Frame.Navigate(new MainPage());
+                        MenegerFrame.Frame.Navigate(new MainPage(vxod));
                     else
                     {
                         InfV.Visibility = Visibility.Hidden;

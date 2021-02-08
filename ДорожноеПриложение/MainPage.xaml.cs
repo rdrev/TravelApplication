@@ -20,9 +20,52 @@ namespace ДорожноеПриложение
     /// </summary>
     public partial class MainPage : Page
     {
-        public MainPage()
+        private Сотрудники сотрудник = null;
+
+        public MainPage(Сотрудники сотрудник)
         {
             InitializeComponent();
+
+            this.сотрудник = сотрудник;
+
+            if (сотрудник.Доступ == "1")
+            {
+                AddTask.Visibility = Visibility.Visible;
+                UpdTask.Visibility = Visibility.Visible;
+                DelTask.Visibility = Visibility.Visible;
+                CBB1.Visibility = Visibility.Visible;
+
+                AddEmp.Visibility = Visibility.Visible;
+                BriBtn.Visibility = Visibility.Visible;
+                LVC.Visibility = Visibility.Visible;
+                LVC0.Visibility = Visibility.Hidden;
+                CBB2.Visibility = Visibility.Visible;
+
+                AddMaterial.Visibility = Visibility.Visible;
+                Payment.Visibility = Visibility.Visible;
+                Plis.Visibility = Visibility.Visible;
+                Min.Visibility = Visibility.Visible;
+                DelMat.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                AddTask.Visibility = Visibility.Hidden;
+                UpdTask.Visibility = Visibility.Hidden;
+                DelTask.Visibility = Visibility.Hidden;
+                CBB1.Visibility = Visibility.Hidden;
+
+                AddEmp.Visibility = Visibility.Hidden;
+                BriBtn.Visibility = Visibility.Hidden;
+                LVC0.Visibility = Visibility.Visible;
+                LVC.Visibility = Visibility.Hidden;
+                CBB2.Visibility = Visibility.Hidden;
+
+                AddMaterial.Visibility = Visibility.Hidden;
+                Payment.Visibility = Visibility.Hidden;
+                Plis.Visibility = Visibility.Hidden;
+                Min.Visibility = Visibility.Hidden;
+                DelMat.Visibility = Visibility.Hidden;
+            }
         }
 
 
@@ -34,8 +77,11 @@ namespace ДорожноеПриложение
 
             if (CBB1.SelectedIndex > 0)
                 comboList = comboList.Where(p => p.Бригады == (CBB1.SelectedItem as Бригады)).ToList();
-
-            DGT.ItemsSource = comboList;
+            
+            if(сотрудник.Доступ == "1")
+                DGT.ItemsSource = comboList;
+            else
+                DGT.ItemsSource = comboList.Where(p => p.Бригада == сотрудник.Бригада);
         }
 
         //Редактор отчета
@@ -48,7 +94,7 @@ namespace ДорожноеПриложение
         //Упровлять росходами
         private void MatBtn_Click(object sender, RoutedEventArgs e)
         {
-            MenegerFrame.Frame.Navigate(new MatConPage((sender as Button).DataContext as Задачи));
+            MenegerFrame.Frame.Navigate(new MatConPage((sender as Button).DataContext as Задачи, сотрудник));
         }
 
         //Добавать задачу
@@ -58,13 +104,13 @@ namespace ДорожноеПриложение
         }
 
         //Изменить задачу
-        private void UpdTask_Click(object sender, RoutedEventArgs e)
+        private void UpdTaskBtn_Click(object sender, RoutedEventArgs e)
         {
             MenegerFrame.Frame.Navigate(new AddTaskPage((sender as Button).DataContext as Задачи));
         }
 
         //Удалить задачу
-        private void DelTask_Click(object sender, RoutedEventArgs e)
+        private void DelTaskBtn_Click(object sender, RoutedEventArgs e)
         {
             if (MessageBox.Show("Вы дельствительно хотете удалить задачу", "Подверждение", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
@@ -91,7 +137,10 @@ namespace ДорожноеПриложение
 
             comboList = comboList.Where(p => p.Имя.ToLower().Contains(TBN.Text.ToLower())).ToList();
 
-            LVC.ItemsSource = comboList;
+            if (сотрудник.Доступ == "1")
+                LVC.ItemsSource = comboList;
+            else
+                LVC0.ItemsSource = comboList.Where(p => p.Бригада == сотрудник.Бригада);
         }
 
         //Обновить список при изменение

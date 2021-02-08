@@ -26,5 +26,10 @@ namespace ДорожноеПриложение
             MainFrame.Navigate(new AuthorizPage());
             MenegerFrame.Frame = MainFrame;
         }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }

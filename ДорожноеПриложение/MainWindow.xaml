@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ДорожноеПриложение"
         mc:Ignorable="d"
-        Title="ДорожноеПриложение" Height="450" Width="800">
+        Title="ДорожноеПриложение" Height="450" Width="800"
+        Closed="Window_Closed">
     <Grid>
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
     </Grid>

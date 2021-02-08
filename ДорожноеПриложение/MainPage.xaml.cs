@@ -211,5 +211,11 @@ namespace ДорожноеПриложение
             CBB1.SelectedIndex = 0;
             CBB2.SelectedIndex = 0;
         }
+
+        private void Payment_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new PaymentPeriodWindow();
+            win.Show();
+        }
     }
 }

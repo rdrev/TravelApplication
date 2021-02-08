@@ -269,6 +269,7 @@
                             <ColumnDefinition Width="175"/>
                             <ColumnDefinition Width="255"/>
                             <ColumnDefinition Width="175"/>
+                            <ColumnDefinition Width="175"/>
                         </Grid.ColumnDefinitions>
                         <TextBlock Text="Матириал"
                                    Name="TB3"
@@ -288,6 +289,11 @@
                                 HorizontalAlignment="Right"
                                 Grid.Column="2"
                                 Margin="2"/>
+                        <Button x:Name="Payment"
+                                Click="Payment_Click"
+                                Content="Выплоты"
+                                Grid.Column="3"
+                                Margin="2" HorizontalAlignment="Center"/>
                     </Grid>
                 </WrapPanel>
                 <DataGrid x:Name="DGW"

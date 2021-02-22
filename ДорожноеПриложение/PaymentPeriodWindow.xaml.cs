@@ -97,7 +97,7 @@ namespace ДорожноеПриложение
                 MessageBox.Show(ex.Message);
 
             }
-            this.Show();
+            this.Close();
         }
     }
 }

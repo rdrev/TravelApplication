@@ -49,9 +49,9 @@
                       AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Название" Binding="{Binding Название}"/>
-                <DataGridTextColumn Header="Название" Binding="{Binding Машина}"/>
-                <DataGridTextColumn Header="Название" Binding="{Binding Занетость}"/>
-                <DataGridTextColumn Header="Название" Binding="{Binding Описание}"/>
+                <DataGridTextColumn Header="Машина" Binding="{Binding Машина}"/>
+                <DataGridTextColumn Header="Занетость" Binding="{Binding Занетость}"/>
+                <DataGridTextColumn Header="Описание" Binding="{Binding Описание}"/>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

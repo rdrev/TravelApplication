@@ -28,20 +28,22 @@ namespace ДорожноеПриложение
 
         private void VxodBtn_Click(object sender, RoutedEventArgs e)
         {
+            //просба подождать
             InfV.Visibility = Visibility.Visible;
 
+            //открытие поотока 
             new Thread(() =>
             {
                 Dispatcher.Invoke((Action)(() =>
-                {
+                {//поиск пользователя
                     var vxod = ДорожнаяБазаEntities.GetДорожнаяБазаEntities().Сотрудники.ToList().Find(p => p.Логин == login.Text && p.Пароль == Convert.ToString(password.Password));
-
+                    //проверка успеха поиска
                     if (vxod != null)
-                        MenegerFrame.Frame.Navigate(new MainPage(vxod));
+                        MenegerFrame.Frame.Navigate(new MainPage(vxod));//откртие главной формы 
                     else
                     {
-                        InfV.Visibility = Visibility.Hidden;
-                        MessageBox.Show("не верный лошин или пароль", "упс");
+                        InfV.Visibility = Visibility.Hidden;//скрытие надпись подаждать
+                        MessageBox.Show("не верный лошин или пароль", "упс");//вывод собщене об ощибки
                     }
                 }));
             }).Start();

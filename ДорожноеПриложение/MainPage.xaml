@@ -49,7 +49,7 @@
                         <DataGridTextColumn
                             Header="Задача" Binding="{Binding ЗадачаНаз}"/>
                         <DataGridTextColumn
-                            Header="Задача" Binding="{Binding Место}"/>
+                            Header="Место" Binding="{Binding Место}"/>
                         <DataGridTextColumn
                             Header="Бригада" Binding="{Binding Бригады.Название}"/>
                         <DataGridTextColumn

@@ -24,13 +24,16 @@ namespace ДорожноеПриложение
         public AuthorizPage()
         {
             InitializeComponent();
+
+            ДорожнаяБазаEntities v = null;
+            v = ДорожнаяБазаEntities.GetДорожнаяБазаEntities();
         }
 
         private void VxodBtn_Click(object sender, RoutedEventArgs e)
         {
             //просба подождать
             InfV.Visibility = Visibility.Visible;
-
+            
             //открытие поотока 
             new Thread(() =>
             {

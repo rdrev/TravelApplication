@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ДорожнаяБазаModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Бригады">
+    <Key>
+      <PropertyRef Name="КодБригады" />
+    </Key>
+    <Property Name="КодБригады" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Название" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Машина" Type="String" MaxLength="17" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Занетость" Type="Boolean" Nullable="false" />
+    <Property Name="Описание" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Задачи" Relationship="Self.FK_Задачи_Бригады" FromRole="Бригады" ToRole="Задачи" />
+    <NavigationProperty Name="Сотрудники" Relationship="Self.FK_Сотрудники_Бригады" FromRole="Бригады" ToRole="Сотрудники" />
+  </EntityType>
+  <EntityType Name="Задачи">
+    <Key>
+      <PropertyRef Name="КодЗадачи" />
+    </Key>
+    <Property Name="КодЗадачи" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ЗадачаНаз" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Место" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Бригада" Type="Int32" Nullable="false" />
+    <Property Name="Статус" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Отчет" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Категория" Type="Int32" Nullable="false" />
+    <Property Name="Дата" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Бригады" Relationship="Self.FK_Задачи_Бригады" FromRole="Задачи" ToRole="Бригады" />
+    <NavigationProperty Name="Категории" Relationship="Self.FK_Задачи_Категории" FromRole="Задачи" ToRole="Категории" />
+    <NavigationProperty Name="СписокРасходов" Relationship="Self.FK_СписокРасходов_Задачи" FromRole="Задачи" ToRole="СписокРасходов" />
+  </EntityType>
+  <EntityType Name="Категории">
+    <Key>
+      <PropertyRef Name="КодКатегории" />
+    </Key>
+    <Property Name="КодКатегории" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="КатегорияНаз" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Цена" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Задачи" Relationship="Self.FK_Задачи_Категории" FromRole="Категории" ToRole="Задачи" />
+  </EntityType>
+  <EntityType Name="СкладМатериала">
+    <Key>
+      <PropertyRef Name="КодМатериала" />
+    </Key>
+    <Property Name="КодМатериала" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="МатериалНаз" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Количиство" Type="Double" Nullable="false" />
+    <Property Name="ЕденицаИзмерения" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="СписокРасходов" Relationship="Self.FK_СписокРасходов_СкладМатериала" FromRole="СкладМатериала" ToRole="СписокРасходов" />
+  </EntityType>
+  <EntityType Name="Сотрудники">
+    <Key>
+      <PropertyRef Name="КодСотрудника" />
+    </Key>
+    <Property Name="КодСотрудника" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Фамилия" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Имя" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Отчество" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Доступ" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Специальность" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Фото" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="Бригада" Type="Int32" Nullable="false" />
+    <Property Name="Логин" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Пароль" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Бригады" Relationship="Self.FK_Сотрудники_Бригады" FromRole="Сотрудники" ToRole="Бригады" />
+  </EntityType>
+  <EntityType Name="СписокРасходов">
+    <Key>
+      <PropertyRef Name="КодСпискаРасхода" />
+    </Key>
+    <Property Name="КодСпискаРасхода" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Задача" Type="Int32" Nullable="false" />
+    <Property Name="Матириал" Type="Int32" Nullable="false" />
+    <Property Name="КолисчествоРасхода" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Задачи" Relationship="Self.FK_СписокРасходов_Задачи" FromRole="СписокРасходов" ToRole="Задачи" />
+    <NavigationProperty Name="СкладМатериала" Relationship="Self.FK_СписокРасходов_СкладМатериала" FromRole="СписокРасходов" ToRole="СкладМатериала" />
+  </EntityType>
+  <Association Name="FK_Задачи_Бригады">
+    <End Role="Бригады" Type="Self.Бригады" Multiplicity="1" />
+    <End Role="Задачи" Type="Self.Задачи" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Бригады">
+        <PropertyRef Name="КодБригады" />
+      </Principal>
+      <Dependent Role="Задачи">
+        <PropertyRef Name="Бригада" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Сотрудники_Бригады">
+    <End Role="Бригады" Type="Self.Бригады" Multiplicity="1" />
+    <End Role="Сотрудники" Type="Self.Сотрудники" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Бригады">
+        <PropertyRef Name="КодБригады" />
+      </Principal>
+      <Dependent Role="Сотрудники">
+        <PropertyRef Name="Бригада" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Задачи_Категории">
+    <End Role="Категории" Type="Self.Категории" Multiplicity="1" />
+    <End Role="Задачи" Type="Self.Задачи" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Категории">
+        <PropertyRef Name="КодКатегории" />
+      </Principal>
+      <Dependent Role="Задачи">
+        <PropertyRef Name="Категория" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_СписокРасходов_Задачи">
+    <End Role="Задачи" Type="Self.Задачи" Multiplicity="1" />
+    <End Role="СписокРасходов" Type="Self.СписокРасходов" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Задачи">
+        <PropertyRef Name="КодЗадачи" />
+      </Principal>
+      <Dependent Role="СписокРасходов">
+        <PropertyRef Name="Задача" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_СписокРасходов_СкладМатериала">
+    <End Role="СкладМатериала" Type="Self.СкладМатериала" Multiplicity="1" />
+    <End Role="СписокРасходов" Type="Self.СписокРасходов" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="СкладМатериала">
+        <PropertyRef Name="КодМатериала" />
+      </Principal>
+      <Dependent Role="СписокРасходов">
+        <PropertyRef Name="Матириал" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ДорожнаяБазаEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Бригады" EntityType="Self.Бригады" />
+    <EntitySet Name="Задачи" EntityType="Self.Задачи" />
+    <EntitySet Name="Категории" EntityType="Self.Категории" />
+    <EntitySet Name="СкладМатериала" EntityType="Self.СкладМатериала" />
+    <EntitySet Name="Сотрудники" EntityType="Self.Сотрудники" />
+    <EntitySet Name="СписокРасходов" EntityType="Self.СписокРасходов" />
+    <AssociationSet Name="FK_Задачи_Бригады" Association="Self.FK_Задачи_Бригады">
+      <End Role="Бригады" EntitySet="Бригады" />
+      <End Role="Задачи" EntitySet="Задачи" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Сотрудники_Бригады" Association="Self.FK_Сотрудники_Бригады">
+      <End Role="Бригады" EntitySet="Бригады" />
+      <End Role="Сотрудники" EntitySet="Сотрудники" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Задачи_Категории" Association="Self.FK_Задачи_Категории">
+      <End Role="Категории" EntitySet="Категории" />
+      <End Role="Задачи" EntitySet="Задачи" />
+    </AssociationSet>
+    <AssociationSet Name="FK_СписокРасходов_Задачи" Association="Self.FK_СписокРасходов_Задачи">
+      <End Role="Задачи" EntitySet="Задачи" />
+      <End Role="СписокРасходов" EntitySet="СписокРасходов" />
+    </AssociationSet>
+    <AssociationSet Name="FK_СписокРасходов_СкладМатериала" Association="Self.FK_СписокРасходов_СкладМатериала">
+      <End Role="СкладМатериала" EntitySet="СкладМатериала" />
+      <End Role="СписокРасходов" EntitySet="СписокРасходов" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
